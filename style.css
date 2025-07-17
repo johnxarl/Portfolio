@@ -13,6 +13,76 @@ body {
   min-height: 100vh;
 }
 
+body.dark-mode {
+  background: linear-gradient(120deg, #181c22 60%, #232b36 100%);
+  color: #f4f7f9;
+}
+
+body.dark-mode section, body.dark-mode #skills {
+  background: #232b36;
+  color: #f4f7f9;
+  box-shadow: 0 10px 32px rgba(0,0,0,0.25);
+}
+
+body.dark-mode header {
+  background: linear-gradient(135deg, #181c22 60%, #232b36 100%);
+  color: #fff;
+}
+
+body.dark-mode .header-text h1 {
+  background: linear-gradient(90deg, #fff 30%, #3498db 70%, #fff 100%);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+body.dark-mode .header-text p {
+  color: #eaf6fb;
+}
+
+body.dark-mode .btn-resume {
+  background: linear-gradient(90deg, #1565c0 60%, #2980b9 100%);
+  color: #fff;
+}
+
+body.dark-mode .btn-resume:hover, body.dark-mode .btn-resume:focus {
+  background: linear-gradient(90deg, #0d47a1 60%, #1565c0 100%);
+}
+
+body.dark-mode .skills-list li {
+  color: #90caf9;
+  background: #263445;
+}
+
+body.dark-mode .skills-list li:hover {
+  background: #1565c0;
+  color: #fff;
+}
+
+body.dark-mode .project {
+  background: #1a222b;
+  border-left: 5px solid #388e3c;
+}
+
+body.dark-mode .project h3 {
+  color: #90caf9;
+}
+
+body.dark-mode .project a {
+  color: #66bb6a;
+}
+
+body.dark-mode .project a:hover {
+  color: #a5d6a7;
+}
+
+body.dark-mode footer {
+  background: #181c22;
+  color: #fff;
+}
+
 /* Responsive Container */
 section, #skills {
   max-width: 900px;
@@ -32,6 +102,21 @@ header {
   box-shadow: 0 4px 15px rgba(44, 62, 80, 0.15);
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
+  /* Animated gradient */
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease-in-out infinite;
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .header-content {
@@ -60,6 +145,23 @@ header {
   margin-bottom: 8px;
   letter-spacing: 1.5px;
   color: #fff;
+  /* Animated text gradient */
+  background: linear-gradient(90deg, #fff 30%, #3498db 70%, #fff 100%);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: shineText 3s linear infinite;
+}
+
+@keyframes shineText {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: 0% center;
+  }
 }
 
 .header-text p {
@@ -323,6 +425,64 @@ header nav a:hover {
   font-weight: bold;
 }
 
+section h2 {
+  margin-bottom: 20px;
+  border-left: 5px solid #3498db;
+  padding-left: 10px;
+  font-size: 1.6em;
+  color: #154360; /* Darker blue for better contrast */
+  background: none;
+}
+
+body, section, #skills {
+  color: #222; /* Darker text for better contrast */
+}
+
+.header-text p, .header-text h1 {
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(44,62,80,0.15); /* Subtle shadow for readability */
+}
+
+.btn-resume {
+  background: linear-gradient(90deg, #1565c0 60%, #2980b9 100%); /* Deeper blue for contrast */
+  color: #fff;
+}
+
+.btn-resume:hover, .btn-resume:focus {
+  background: linear-gradient(90deg, #0d47a1 60%, #1565c0 100%);
+}
+
+.skills-list li {
+  color: #1565c0;
+  background: #e3f2fd;
+}
+
+.skills-list li:hover {
+  background: #1565c0;
+  color: #fff;
+}
+
+.project {
+  background: #f4f7fa;
+  border-left: 5px solid #1b5e20;
+}
+
+.project h3 {
+  color: #154360;
+}
+
+.project a {
+  color: #1b5e20;
+}
+
+.project a:hover {
+  color: #388e3c;
+}
+
+footer {
+  background: #154360;
+  color: #fff;
+}
 
 
 /* Responsive Design */
@@ -359,6 +519,58 @@ header nav a:hover {
     padding: 7px 12px;
     font-size: 0.95em;
   }
+}
+
+/* Microinteractions */
+.project {
+  position: relative;
+  overflow: hidden;
+}
+.project:hover::after {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; right: 0; bottom: 0;
+  background: rgba(52, 152, 219, 0.08);
+  pointer-events: none;
+  animation: projectHoverPulse 0.6s;
+}
+@keyframes projectHoverPulse {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.btn-resume, #darkModeToggle {
+  position: relative;
+  overflow: hidden;
+}
+.btn-resume:active::after, #darkModeToggle:active::after {
+  content: '';
+  position: absolute;
+  left: 50%; top: 50%;
+  width: 0; height: 0;
+  background: rgba(52,152,219,0.25);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: ripple 0.5s linear;
+  pointer-events: none;
+}
+@keyframes ripple {
+  to {
+    width: 200px;
+    height: 200px;
+    opacity: 0;
+  }
+}
+
+.skills-list li {
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+  transition: opacity 0.5s, transform 0.5s;
+}
+.skills-list li.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
 
 

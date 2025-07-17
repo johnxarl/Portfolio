@@ -7,26 +7,28 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
+  <header role="banner">
   <div class="header-content">
-    <img src="images/profile.jpg" alt="Profile photo of John Carl" class="header-photo" />
+    <img src="images/profile.jpg" alt="Profile photo of John Carl Velasquez, smiling and wearing a collared shirt" class="header-photo" />
     <div class="header-text">
       <h1>John Carl Q. Velasquez</h1>
       <p>Java Programmer | Web Developer & Designer | IT Student | Desktop App Developer</p>
-      <nav>
+      <nav role="navigation" aria-label="Main navigation">
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
       </nav>
-      <a href="resume.pdf" download class="btn-resume">Download Resume</a>
-
+      <a href="resume.pdf" download class="btn-resume" aria-label="Download Resume as PDF">Download Resume</a>
+      <button id="darkModeToggle" aria-label="Toggle dark mode" style="margin-top:18px; margin-left:10px; background:none; border:none; cursor:pointer; font-size:1.5em; color:#fff;">
+        <span id="darkModeIcon" aria-hidden="true">🌙</span>
+      </button>
     </div>
   </div>
 </header>
 
-
-  <section id="about">
-  <h2>About Me</h2>
+<main id="main-content" tabindex="-1">
+  <section id="about" aria-labelledby="about-heading">
+  <h2 id="about-heading">About Me</h2>
   <p>Hello! I'm Johncarl, an IT student at National University - Clark majoring in Web and Mobile Application. I am a passionate Web Developer and Designer, as well as a Java desktop app developer. I love building beautiful, functional websites and desktop applications that solve real-world problems.</p>
   <p>With a strong foundation in both design and development, I create user-friendly web experiences using HTML, CSS, and modern design principles. I am a quick learner, adaptable, and passionate about continuous learning. My background includes HR experience and IT certifications like CompTIA ITF+, giving me a strong foundation in both communication and tech troubleshooting.</p>
   <ul>
@@ -36,20 +38,31 @@
     <li><strong>Certifications:</strong> CompTIA ITF+</li>
   </ul>
 </section>
-<ul class="skills-list">
-  <li>Java (Swing, JDBC)</li>
-  <li>SQLite / MySQL</li>
-  <li>HTML & CSS</li>
-  <li>Git & GitHub</li>
-  <li>Problem Solving</li>
-  <li>Hardware Troubleshooting</li>
-  <li>Networking Fundamentals</li>
+<ul class="skills-list" aria-label="Skills list">
+  <li data-description="Java is a powerful, object-oriented programming language. Swing and JDBC are used for building desktop apps and database connectivity.">Java (Swing, JDBC)</li>
+  <li data-description="SQLite and MySQL are popular relational database systems for storing and managing data.">SQLite / MySQL</li>
+  <li data-description="HTML and CSS are the core technologies for building and styling web pages.">HTML & CSS</li>
+  <li data-description="Responsive Web Design ensures your website looks great on all devices, from phones to desktops.">Responsive Web Design</li>
+  <li data-description="JavaScript (ES6+) is the scripting language of the web, enabling dynamic and interactive features.">JavaScript (ES6+)</li>
+  <li data-description="Firebase is a cloud platform for building web and mobile apps, offering authentication, database, and hosting services.">Firebase</li>
+  <li data-description="Git is a version control system, and GitHub is a platform for hosting and collaborating on code.">Git & GitHub</li>
+  <li data-description="Problem solving is the ability to find solutions to complex or challenging issues.">Problem Solving</li>
+  <li data-description="Hardware troubleshooting involves diagnosing and fixing computer hardware issues.">Hardware Troubleshooting</li>
+  <li data-description="Networking fundamentals cover the basics of how computers communicate and share data.">Networking Fundamentals</li>
 </ul>
 
+<!-- Skill Description Modal -->
+<div id="skillModal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.7); z-index:2000; align-items:center; justify-content:center;">
+  <div style="background:#fff; color:#222; max-width:400px; width:90vw; margin:auto; border-radius:16px; padding:28px 20px; position:relative; box-shadow:0 8px 32px rgba(0,0,0,0.18); text-align:center;">
+    <button onclick="closeSkillModal()" aria-label="Close skill description" style="position:absolute; top:12px; right:12px; background:none; border:none; font-size:1.3em; cursor:pointer;">&times;</button>
+    <h3 id="skillModalTitle"></h3>
+    <p id="skillModalDesc"></p>
+  </div>
+</div>
 
 
-  <section id="projects">
-  <h2>Projects</h2>
+  <section id="projects" aria-labelledby="projects-heading">
+  <h2 id="projects-heading">Projects</h2>
 
   <div class="project">
     <h3>Resource Sharing Platform</h3>
@@ -73,14 +86,94 @@
   </div>
 </section>
 
+  <section id="blog" aria-labelledby="blog-heading">
+    <h2 id="blog-heading">Blog</h2>
+    <div class="blog-post">
+      <h3>How I Built My Insta Cravings Menu</h3>
+      <p class="blog-date">May 2024</p>
+      <p class="blog-summary">A behind-the-scenes look at how I designed and developed the Insta Cravings online menu and ordering system using modern web technologies.</p>
+      <button class="btn-resume" onclick="openBlogModal('instacravings')" aria-label="Read full post: How I Built My Insta Cravings Menu">Read More</button>
+    </div>
+    <div class="blog-post">
+      <h3>Building the Resource Sharing Platform</h3>
+      <p class="blog-date">April 2024</p>
+      <p class="blog-summary">Discover how I created a Java desktop app to help communities share and borrow resources efficiently, from concept to deployment.</p>
+      <button class="btn-resume" onclick="openBlogModal('resource')" aria-label="Read full post: Building the Resource Sharing Platform">Read More</button>
+    </div>
+    <div class="blog-post">
+      <h3>Designing the Cemetery Management System</h3>
+      <p class="blog-date">March 2024</p>
+      <p class="blog-summary">My experience building a visual, grid-based Java app for managing cemetery records and grave plots, with a focus on usability and data integrity.</p>
+      <button class="btn-resume" onclick="openBlogModal('cemetery')" aria-label="Read full post: Designing the Cemetery Management System">Read More</button>
+    </div>
+  </section>
+
+  <!-- Blog Modals -->
+  <div id="blogModal-instacravings" class="blogModal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.7); z-index:1000; align-items:center; justify-content:center;">
+    <div style="background:#fff; color:#222; max-width:600px; width:90vw; margin:auto; border-radius:16px; padding:32px 24px; position:relative; box-shadow:0 8px 32px rgba(0,0,0,0.18);">
+      <button onclick="closeBlogModal('instacravings')" aria-label="Close blog post" style="position:absolute; top:16px; right:16px; background:none; border:none; font-size:1.5em; cursor:pointer;">&times;</button>
+      <h2>How I Built My Insta Cravings Menu</h2>
+      <p class="blog-date">May 2024</p>
+      <p><strong>Overview:</strong> Insta Cravings is an online menu and ordering system I built to help customers easily browse, order, and track their favorite meals. The project was inspired by the need for a simple, user-friendly digital menu for a local food business.</p>
+      <p><strong>Tech Stack:</strong> HTML, CSS, JavaScript, Firebase</p>
+      <p><strong>Key Features:</strong></p>
+      <ul>
+        <li>Modern, mobile-friendly design with clear categories for rice meals, pastas, snacks, and drinks</li>
+        <li>Interactive cart and order tracking</li>
+        <li>Customer login for loyalty rewards</li>
+        <li>Real-time updates using Firebase</li>
+      </ul>
+      <p><strong>Development Process:</strong> I started by designing the UI in Figma, focusing on simplicity and ease of use. I then built the frontend with HTML, CSS, and JavaScript, and used Firebase for authentication, database, and hosting. I paid special attention to accessibility and responsive design so anyone can use the menu on any device.</p>
+      <p><strong>What I Learned:</strong> This project taught me a lot about real-time web apps, user experience, and the power of cloud platforms like Firebase. It was rewarding to see real customers using the system and providing positive feedback!</p>
+      <p><a href="https://instacravings.web.app/track.html?id=WifIXMGiFS4TF4GJPcdT" target="_blank">View the live menu</a></p>
+    </div>
+  </div>
+  <div id="blogModal-resource" class="blogModal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.7); z-index:1000; align-items:center; justify-content:center;">
+    <div style="background:#fff; color:#222; max-width:600px; width:90vw; margin:auto; border-radius:16px; padding:32px 24px; position:relative; box-shadow:0 8px 32px rgba(0,0,0,0.18);">
+      <button onclick="closeBlogModal('resource')" aria-label="Close blog post" style="position:absolute; top:16px; right:16px; background:none; border:none; font-size:1.5em; cursor:pointer;">&times;</button>
+      <h2>Building the Resource Sharing Platform</h2>
+      <p class="blog-date">April 2024</p>
+      <p><strong>Overview:</strong> The Resource Sharing Platform is a Java desktop application designed to help communities, organizations, or campuses share and borrow resources like books, tools, and equipment.</p>
+      <p><strong>Tech Stack:</strong> Java, Swing, SQLite, JDBC</p>
+      <p><strong>Key Features:</strong></p>
+      <ul>
+        <li>Easy-to-use interface for adding, borrowing, and returning resources</li>
+        <li>Search and filter functionality for quick access to items</li>
+        <li>Data persistence using SQLite database</li>
+        <li>User authentication and activity tracking</li>
+      </ul>
+      <p><strong>Development Process:</strong> I focused on creating a clean, intuitive UI with Java Swing and ensured robust data handling with JDBC and SQLite. The project helped me strengthen my skills in desktop app development and database integration.</p>
+      <p><strong>What I Learned:</strong> This project taught me about user experience in desktop apps, database management, and the importance of clear workflows for resource management.</p>
+      <p><a href="https://github.com/johnxarl/ResourceSharing.Final" target="_blank">View on GitHub</a></p>
+    </div>
+  </div>
+  <div id="blogModal-cemetery" class="blogModal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.7); z-index:1000; align-items:center; justify-content:center;">
+    <div style="background:#fff; color:#222; max-width:600px; width:90vw; margin:auto; border-radius:16px; padding:32px 24px; position:relative; box-shadow:0 8px 32px rgba(0,0,0,0.18);">
+      <button onclick="closeBlogModal('cemetery')" aria-label="Close blog post" style="position:absolute; top:16px; right:16px; background:none; border:none; font-size:1.5em; cursor:pointer;">&times;</button>
+      <h2>Designing the Cemetery Management System</h2>
+      <p class="blog-date">March 2024</p>
+      <p><strong>Overview:</strong> The Cemetery Management System is a Java desktop app that helps administrators manage burial records and grave plots using a visual 4x4 grid.</p>
+      <p><strong>Tech Stack:</strong> Java, Swing, SQLite, JDBC</p>
+      <p><strong>Key Features:</strong></p>
+      <ul>
+        <li>Visual grid for managing and viewing grave plots</li>
+        <li>CRUD operations for burial records</li>
+        <li>Search and filter for quick data access</li>
+        <li>Data stored securely in SQLite</li>
+      </ul>
+      <p><strong>Development Process:</strong> I designed the grid-based UI with Java Swing and implemented robust data management with SQLite and JDBC. The focus was on usability and ensuring data integrity for sensitive records.</p>
+      <p><strong>What I Learned:</strong> This project deepened my understanding of UI design for specialized applications and the importance of reliable data handling in real-world scenarios.</p>
+      <p><a href="https://johnxarl.github.io/CemetaryManagement/" target="_blank">View on GitHub</a></p>
+    </div>
+  </div>
 
 
-  <section id="contact">
-    <h2>Contact Me</h2>
+  <section id="contact" aria-labelledby="contact-heading">
+    <h2 id="contact-heading">Contact Me</h2>
     <p><strong>Email:</strong> johncarlvelasquez482@gmail.com</p>
     <p><strong>Phone:</strong> 09660084563</p>
     <p><strong>Facebook:</strong> 
-      <a href="https://www.facebook.com/share/19WjxSf8uq/?mibextid=wwXIfr" target="_blank">
+      <a href="https://www.facebook.com/share/19WjxSf8uq/?mibextid=wwXIfr" target="_blank" aria-label="Facebook profile for John Carl Velasquez">
         facebook.com/johncarl
       </a>
     </p>
@@ -90,4 +183,83 @@
     <p>&copy; 2025 John Carl Velasquez. All rights reserved.</p>
   </footer>
 </body>
+<script>
+// Dark mode toggle logic
+const toggle = document.getElementById('darkModeToggle');
+const icon = document.getElementById('darkModeIcon');
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+const savedTheme = localStorage.getItem('theme');
+
+function setDarkMode(on) {
+  document.body.classList.toggle('dark-mode', on);
+  icon.textContent = on ? '☀️' : '🌙';
+  localStorage.setItem('theme', on ? 'dark' : 'light');
+}
+
+if (savedTheme === 'dark' || (prefersDark && !savedTheme)) {
+  setDarkMode(true);
+}
+
+toggle.addEventListener('click', () => {
+  setDarkMode(!document.body.classList.contains('dark-mode'));
+});
+
+// Microinteraction: Animate skill badges on scroll
+const skillItems = document.querySelectorAll('.skills-list li');
+const observer = new window.IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.2 });
+skillItems.forEach(item => observer.observe(item));
+
+function openBlogModal(which) {
+  document.getElementById('blogModal-' + which).style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+function closeBlogModal(which) {
+  document.getElementById('blogModal-' + which).style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+// Skill Description Modal Logic
+const skillModal = document.getElementById('skillModal');
+const skillModalTitle = document.getElementById('skillModalTitle');
+const skillModalDesc = document.getElementById('skillModalDesc');
+
+function openSkillModal(title, description) {
+  skillModalTitle.textContent = title;
+  skillModalDesc.textContent = description;
+  skillModal.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeSkillModal() {
+  skillModal.style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+// Add event listeners to skill badges
+// Remove hover events, use click instead
+
+document.querySelectorAll('.skills-list li').forEach(skill => {
+  skill.addEventListener('click', () => {
+    const description = skill.getAttribute('data-description');
+    if (description) {
+      openSkillModal(skill.textContent, description);
+    }
+  });
+});
+
+// Close modal when clicking the overlay (but not the modal content)
+skillModal.addEventListener('click', function(e) {
+  if (e.target === skillModal) {
+    closeSkillModal();
+  }
+});
+
+</script>
 </html>
