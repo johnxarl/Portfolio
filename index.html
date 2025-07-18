@@ -7,6 +7,14 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Welcome Overlay -->
+  <div id="welcomeOverlay" style="position:fixed;z-index:5000;top:0;left:0;width:100vw;height:100vh;background:#EAE7DC;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity 0.7s;">
+    <img src="images/profile.jpg" alt="Profile photo of John Carl Velasquez" style="width:120px;height:120px;border-radius:50%;object-fit:cover;box-shadow:0 4px 16px rgba(142,141,138,0.18);margin-bottom:24px;">
+    <h1 style="font-size:2.5rem;color:#E85A4F;margin-bottom:10px;">Welcome!</h1>
+    <h2 style="font-size:1.5rem;color:#8E8D8A;margin-bottom:8px;">I'm John Carl Q. Velasquez</h2>
+    <p style="font-size:1.1rem;color:#222;margin-bottom:28px;">Java Programmer | Web Developer & Designer | IT Student</p>
+    <button id="enterBtn" style="padding:12px 32px;font-size:1.1rem;background:#E98074;color:#fff;border:none;border-radius:8px;cursor:pointer;box-shadow:0 2px 8px rgba(142,141,138,0.10);transition:background 0.2s;">Enter Portfolio</button>
+  </div>
   <header role="banner">
   <div class="header-content">
     <img src="images/profile.jpg" alt="Profile photo of John Carl Velasquez, smiling and wearing a collared shirt" class="header-photo" />
@@ -38,18 +46,32 @@
     <li><strong>Certifications:</strong> CompTIA ITF+</li>
   </ul>
 </section>
-<ul class="skills-list" aria-label="Skills list">
-  <li data-description="Java is a powerful, object-oriented programming language. Swing and JDBC are used for building desktop apps and database connectivity.">Java (Swing, JDBC)</li>
-  <li data-description="SQLite and MySQL are popular relational database systems for storing and managing data.">SQLite / MySQL</li>
-  <li data-description="HTML and CSS are the core technologies for building and styling web pages.">HTML & CSS</li>
-  <li data-description="Responsive Web Design ensures your website looks great on all devices, from phones to desktops.">Responsive Web Design</li>
-  <li data-description="JavaScript (ES6+) is the scripting language of the web, enabling dynamic and interactive features.">JavaScript (ES6+)</li>
-  <li data-description="Firebase is a cloud platform for building web and mobile apps, offering authentication, database, and hosting services.">Firebase</li>
-  <li data-description="Git is a version control system, and GitHub is a platform for hosting and collaborating on code.">Git & GitHub</li>
-  <li data-description="Problem solving is the ability to find solutions to complex or challenging issues.">Problem Solving</li>
-  <li data-description="Hardware troubleshooting involves diagnosing and fixing computer hardware issues.">Hardware Troubleshooting</li>
-  <li data-description="Networking fundamentals cover the basics of how computers communicate and share data.">Networking Fundamentals</li>
-</ul>
+<div class="skills-marquee-container">
+  <ul class="skills-list" id="skillsList" aria-label="Skills list">
+    <li data-description="Java is a powerful, object-oriented programming language. Swing and JDBC are used for building desktop apps and database connectivity.">Java (Swing, JDBC)</li>
+    <li data-description="SQLite and MySQL are popular relational database systems for storing and managing data.">SQLite / MySQL</li>
+    <li data-description="HTML and CSS are the core technologies for building and styling web pages.">HTML & CSS</li>
+    <li data-description="Responsive Web Design ensures your website looks great on all devices, from phones to desktops.">Responsive Web Design</li>
+    <li data-description="JavaScript (ES6+) is the scripting language of the web, enabling dynamic and interactive features.">JavaScript (ES6+)</li>
+    <li data-description="Firebase is a cloud platform for building web and mobile apps, offering authentication, database, and hosting services.">Firebase</li>
+    <li data-description="Git is a version control system, and GitHub is a platform for hosting and collaborating on code.">Git & GitHub</li>
+    <li data-description="Problem solving is the ability to find solutions to complex or challenging issues.">Problem Solving</li>
+    <li data-description="Hardware troubleshooting involves diagnosing and fixing computer hardware issues.">Hardware Troubleshooting</li>
+    <li data-description="Networking fundamentals cover the basics of how computers communicate and share data.">Networking Fundamentals</li>
+  </ul>
+  <ul class="skills-list" aria-hidden="true">
+    <li data-description="Java is a powerful, object-oriented programming language. Swing and JDBC are used for building desktop apps and database connectivity.">Java (Swing, JDBC)</li>
+    <li data-description="SQLite and MySQL are popular relational database systems for storing and managing data.">SQLite / MySQL</li>
+    <li data-description="HTML and CSS are the core technologies for building and styling web pages.">HTML & CSS</li>
+    <li data-description="Responsive Web Design ensures your website looks great on all devices, from phones to desktops.">Responsive Web Design</li>
+    <li data-description="JavaScript (ES6+) is the scripting language of the web, enabling dynamic and interactive features.">JavaScript (ES6+)</li>
+    <li data-description="Firebase is a cloud platform for building web and mobile apps, offering authentication, database, and hosting services.">Firebase</li>
+    <li data-description="Git is a version control system, and GitHub is a platform for hosting and collaborating on code.">Git & GitHub</li>
+    <li data-description="Problem solving is the ability to find solutions to complex or challenging issues.">Problem Solving</li>
+    <li data-description="Hardware troubleshooting involves diagnosing and fixing computer hardware issues.">Hardware Troubleshooting</li>
+    <li data-description="Networking fundamentals cover the basics of how computers communicate and share data.">Networking Fundamentals</li>
+  </ul>
+</div>
 
 <!-- Skill Description Modal -->
 <div id="skillModal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.7); z-index:2000; align-items:center; justify-content:center;">
@@ -65,6 +87,15 @@
   <h2 id="projects-heading">Projects</h2>
 
   <div class="project">
+    <img src="images/instacravings1.png" alt="Instacravings project screenshot" class="project-thumb" onclick="openGallery('instacravings')" style="cursor:pointer;max-width:180px;border-radius:10px;margin-bottom:12px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+    <h3>Instacravings Online Menu & Ordering</h3>
+    <p>A modern web-based food menu and ordering system for Insta Cravings. Users can browse rice meals, pastas, snacks, and drinks, add items to their cart, and place orders online. Features a clean UI, live order tracking, and customer login for loyalty rewards.</p>
+    <p><strong>Tech Stack:</strong> HTML, CSS, JavaScript, Firebase</p>
+    <a href="https://instacravings.web.app/track.html?id=WifIXMGiFS4TF4GJPcdT" target="_blank">View Live Demo</a>
+  </div>
+
+  <div class="project">
+    <img src="images/resource1.png" alt="Resource Sharing Platform screenshot" class="project-thumb" onclick="openGallery('resource')" style="cursor:pointer;max-width:180px;border-radius:10px;margin-bottom:12px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
     <h3>Resource Sharing Platform</h3>
     <p>A Java desktop application designed to facilitate sharing and borrowing of resources (e.g., books, tools, equipment) within a small community, organization, or campus.</p>
     <p><strong>Tech Stack:</strong> Java, Swing, SQLite, JDBC</p>
@@ -72,19 +103,21 @@
   </div>
 
   <div class="project">
+    <img src="images/cemetarymanagement1.png" alt="Cemetery Management System screenshot" class="project-thumb" onclick="openGallery('cemetery')" style="cursor:pointer;max-width:180px;border-radius:10px;margin-bottom:12px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
     <h3>Cemetery Management System</h3>
     <p>A Java desktop app that helps manage cemetery burial records and grave plots using a visual 4x4 grid. Admins can add, edit, delete, and search burial data. Built with Java Swing and SQLite.</p>
     <p><strong>Tech Stack:</strong> Java, Swing, SQLite, JDBC</p>
     <a href="https://johnxarl.github.io/CemetaryManagement/" target="_blank">View on GitHub</a>
   </div>
-
-  <div class="project">
-    <h3>Instacravings Online Menu & Ordering</h3>
-    <p>A modern web-based food menu and ordering system for Insta Cravings. Users can browse rice meals, pastas, snacks, and drinks, add items to their cart, and place orders online. Features a clean UI, live order tracking, and customer login for loyalty rewards.</p>
-    <p><strong>Tech Stack:</strong> HTML, CSS, JavaScript, Firebase</p>
-    <a href="https://instacravings.web.app/track.html?id=WifIXMGiFS4TF4GJPcdT" target="_blank">View Live Demo</a>
-  </div>
 </section>
+
+<!-- Project Galleries -->
+<div id="galleryModal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.8); z-index:3000; align-items:center; justify-content:center;">
+  <div id="galleryContent" style="background:#fff; color:#222; max-width:700px; width:96vw; margin:auto; border-radius:16px; padding:28px 20px; position:relative; box-shadow:0 8px 32px rgba(0,0,0,0.18); text-align:center;">
+    <button onclick="closeGallery()" aria-label="Close gallery" style="position:absolute; top:12px; right:12px; background:none; border:none; font-size:1.3em; cursor:pointer;">&times;</button>
+    <div id="galleryImages" style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center;"></div>
+  </div>
+</div>
 
   <section id="blog" aria-labelledby="blog-heading">
     <h2 id="blog-heading">Blog</h2>
@@ -187,7 +220,6 @@
 // Dark mode toggle logic
 const toggle = document.getElementById('darkModeToggle');
 const icon = document.getElementById('darkModeIcon');
-const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 const savedTheme = localStorage.getItem('theme');
 
 function setDarkMode(on) {
@@ -196,7 +228,10 @@ function setDarkMode(on) {
   localStorage.setItem('theme', on ? 'dark' : 'light');
 }
 
-if (savedTheme === 'dark' || (prefersDark && !savedTheme)) {
+// Default to dark mode unless user chose light
+if (savedTheme === 'light') {
+  setDarkMode(false);
+} else {
   setDarkMode(true);
 }
 
@@ -249,6 +284,7 @@ document.querySelectorAll('.skills-list li').forEach(skill => {
   skill.addEventListener('click', () => {
     const description = skill.getAttribute('data-description');
     if (description) {
+      document.getElementById('skillsList').classList.add('paused');
       openSkillModal(skill.textContent, description);
     }
   });
@@ -259,6 +295,68 @@ skillModal.addEventListener('click', function(e) {
   if (e.target === skillModal) {
     closeSkillModal();
   }
+});
+
+// Resume marquee when modal closes
+function closeSkillModal() {
+  skillModal.style.display = 'none';
+  document.body.style.overflow = '';
+  document.getElementById('skillsList').classList.remove('paused');
+}
+
+const projectImages = {
+  instacravings: [
+    'images/instacravings1.png',
+    'images/instacravings2.png',
+    'images/instacravings3.png',
+    'images/instacravings4.png',
+    'images/instacravings5.png',
+  ],
+  resource: [
+    'images/resource1.png',
+    'images/resource2.png',
+    'images/resource3.png',
+  ],
+  cemetery: [
+    'images/cemetarymanagement1.png',
+    'images/cemetarymanagement2.png',
+    'images/cemetarymanagement3.png',
+    'images/cemetarymanagement4.png',
+    'images/cemetarymanagement5.png',
+  ]
+};
+function openGallery(project) {
+  const modal = document.getElementById('galleryModal');
+  const gallery = document.getElementById('galleryImages');
+  gallery.innerHTML = '';
+  projectImages[project].forEach(src => {
+    const img = document.createElement('img');
+    img.src = src;
+    img.alt = 'Project screenshot';
+    img.style.maxWidth = '200px';
+    img.style.borderRadius = '10px';
+    img.style.boxShadow = '0 2px 8px rgba(44,62,80,0.10)';
+    gallery.appendChild(img);
+  });
+  modal.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+function closeGallery() {
+  document.getElementById('galleryModal').style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+// Welcome Overlay Logic
+const welcomeOverlay = document.getElementById('welcomeOverlay');
+const enterBtn = document.getElementById('enterBtn');
+welcomeOverlay.style.display = 'flex';
+document.body.style.overflow = 'hidden';
+enterBtn.addEventListener('click', () => {
+  welcomeOverlay.style.opacity = 0;
+  setTimeout(() => {
+    welcomeOverlay.style.display = 'none';
+    document.body.style.overflow = '';
+  }, 700);
 });
 
 </script>

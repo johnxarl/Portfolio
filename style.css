@@ -8,29 +8,29 @@
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
-  background: linear-gradient(120deg, #f4f7f9 60%, #eaf6fb 100%);
-  color: #2c3e50;
+  background: #EAE7DC;
+  color: #222;
   min-height: 100vh;
 }
 
 body.dark-mode {
-  background: linear-gradient(120deg, #181c22 60%, #232b36 100%);
-  color: #f4f7f9;
+  background: #8E8D8A;
+  color: #EAE7DC;
 }
 
 body.dark-mode section, body.dark-mode #skills {
-  background: #232b36;
-  color: #f4f7f9;
-  box-shadow: 0 10px 32px rgba(0,0,0,0.25);
+  background: #222;
+  color: #EAE7DC;
+  box-shadow: 0 10px 32px rgba(232, 128, 116, 0.10);
 }
 
 body.dark-mode header {
-  background: linear-gradient(135deg, #181c22 60%, #232b36 100%);
-  color: #fff;
+  background: linear-gradient(135deg, #8E8D8A 60%, #222 100%);
+  color: #EAE7DC;
 }
 
 body.dark-mode .header-text h1 {
-  background: linear-gradient(90deg, #fff 30%, #3498db 70%, #fff 100%);
+  background: linear-gradient(90deg, #EAE7DC 30%, #E85A4F 70%, #EAE7DC 100%);
   background-size: 200% auto;
   background-clip: text;
   -webkit-background-clip: text;
@@ -39,67 +39,68 @@ body.dark-mode .header-text h1 {
 }
 
 body.dark-mode .header-text p {
-  color: #eaf6fb;
+  color: #EAE7DC;
 }
 
 body.dark-mode .btn-resume {
-  background: linear-gradient(90deg, #1565c0 60%, #2980b9 100%);
+  background: linear-gradient(90deg, #E98074 60%, #E85A4F 100%);
   color: #fff;
 }
 
 body.dark-mode .btn-resume:hover, body.dark-mode .btn-resume:focus {
-  background: linear-gradient(90deg, #0d47a1 60%, #1565c0 100%);
+  background: linear-gradient(90deg, #E85A4F 60%, #E98074 100%);
 }
 
 body.dark-mode .skills-list li {
-  color: #90caf9;
-  background: #263445;
+  color: #EAE7DC;
+  background: #D8C3A5;
 }
 
 body.dark-mode .skills-list li:hover {
-  background: #1565c0;
+  background: #E85A4F;
   color: #fff;
 }
 
 body.dark-mode .project {
-  background: #1a222b;
-  border-left: 5px solid #388e3c;
+  background: #222;
+  border-left: 5px solid #E85A4F;
 }
 
 body.dark-mode .project h3 {
-  color: #90caf9;
+  color: #E98074;
 }
 
 body.dark-mode .project a {
-  color: #66bb6a;
+  color: #E98074;
+  text-decoration: underline;
 }
 
 body.dark-mode .project a:hover {
-  color: #a5d6a7;
+  color: #E85A4F;
 }
 
 body.dark-mode footer {
-  background: #181c22;
-  color: #fff;
+  background: #8E8D8A;
+  color: #EAE7DC;
 }
 
 /* Responsive Container */
 section, #skills {
   max-width: 900px;
   margin: 40px auto;
-  background: white;
+  background: #FFF;
   padding: 40px 30px;
   border-radius: 18px;
-  box-shadow: 0 10px 32px rgba(44, 62, 80, 0.10);
+  box-shadow: 0 10px 32px rgba(142, 141, 138, 0.08);
 }
 
 /* Header */
 header {
-  background: linear-gradient(135deg, #2c3e50 60%, #3498db 100%);
-  color: white;
+  background: linear-gradient(135deg, #EAE7DC 60%, #D8C3A5 100%);
+  color: #222;
   padding: 60px 20px 40px 20px;
   text-align: center;
-  box-shadow: 0 4px 15px rgba(44, 62, 80, 0.15);
+  box-shadow: 0 4px 15px rgba(142, 141, 138, 0.10);
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
   /* Animated gradient */
@@ -144,9 +145,9 @@ header {
   font-size: 2.7rem;
   margin-bottom: 8px;
   letter-spacing: 1.5px;
-  color: #fff;
+  color: #222;
   /* Animated text gradient */
-  background: linear-gradient(90deg, #fff 30%, #3498db 70%, #fff 100%);
+  background: linear-gradient(90deg, #E85A4F 30%, #8E8D8A 70%, #E85A4F 100%);
   background-size: 200% auto;
   background-clip: text;
   -webkit-background-clip: text;
@@ -166,7 +167,7 @@ header {
 
 .header-text p {
   font-size: 1.15rem;
-  color: #eaf6fb;
+  color: #8E8D8A;
   margin-bottom: 10px;
 }
 
@@ -196,21 +197,21 @@ header nav a:hover, header nav a:focus {
 .btn-resume {
   display: inline-block;
   margin-top: 18px;
-  background: linear-gradient(90deg, #3498db 60%, #2980b9 100%);
-  color: white;
+  background: linear-gradient(90deg, #E98074 60%, #E85A4F 100%);
+  color: #fff;
   padding: 12px 28px;
   border-radius: 10px;
   text-decoration: none;
   font-weight: bold;
   font-size: 1.08em;
   letter-spacing: 0.5px;
-  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.10);
+  box-shadow: 0 2px 8px rgba(142, 141, 138, 0.10);
   transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
 }
 
 .btn-resume:hover, .btn-resume:focus {
-  background: linear-gradient(90deg, #2980b9 60%, #3498db 100%);
-  box-shadow: 0 6px 18px rgba(44, 62, 80, 0.18);
+  background: linear-gradient(90deg, #E85A4F 60%, #E98074 100%);
+  box-shadow: 0 6px 18px rgba(142, 141, 138, 0.18);
   transform: translateY(-2px) scale(1.03);
 }
 
@@ -235,19 +236,19 @@ header nav a:hover, header nav a:focus {
 }
 
 .skills-list li {
-  background: linear-gradient(90deg, #eaf6fb 60%, #f4f7f9 100%);
+  background: #D8C3A5;
+  color: #222;
   padding: 10px 22px;
   border-radius: 20px;
-  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.07);
+  box-shadow: 0 2px 8px rgba(142, 141, 138, 0.07);
   font-weight: 600;
-  color: #2980b9;
   font-size: 1em;
   letter-spacing: 0.2px;
   transition: background 0.2s, color 0.2s;
 }
 
 .skills-list li:hover {
-  background: #3498db;
+  background: #E98074;
   color: #fff;
 }
 
@@ -255,8 +256,8 @@ header nav a:hover, header nav a:focus {
 .project {
   margin-bottom: 28px;
   padding: 24px 20px;
-  border-left: 5px solid #27ae60;
-  background: #f9f9f9;
+  border-left: 5px solid #E98074;
+  background: #FFF;
   border-radius: 12px;
   transition: transform 0.3s, box-shadow 0.3s;
   box-shadow: 0 2px 10px rgba(44, 62, 80, 0.07);
@@ -268,19 +269,19 @@ header nav a:hover, header nav a:focus {
 }
 
 .project h3 {
-  color: #2c3e50;
+  color: #E85A4F;
   margin-bottom: 8px;
 }
 
 .project a {
-  color: #27ae60;
+  color: #E85A4F;
   text-decoration: none;
   font-weight: bold;
   transition: color 0.2s;
 }
 
 .project a:hover {
-  color: #219150;
+  color: #E98074;
   text-decoration: underline;
 }
 
@@ -302,15 +303,15 @@ header nav a:hover, header nav a:focus {
 
 /* Footer */
 footer {
-  background: #2c3e50;
-  color: #fff;
+  background: #EAE7DC;
+  color: #222;
   text-align: center;
   padding: 22px 10px;
   font-size: 1em;
   margin-top: 50px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  box-shadow: 0 -2px 10px rgba(44, 62, 80, 0.10);
+  box-shadow: 0 -2px 10px rgba(142, 141, 138, 0.10);
 }
 .profile-photo {
   width: 150px;
@@ -482,6 +483,45 @@ body, section, #skills {
 footer {
   background: #154360;
   color: #fff;
+}
+
+.skills-marquee-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto 30px auto;
+  background: none;
+  padding: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.skills-marquee-container .skills-list {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 18px;
+  min-width: max-content;
+  animation: marquee 18s linear infinite;
+  will-change: transform;
+}
+
+#skillsList.paused {
+  animation-play-state: paused;
+}
+
+.skills-marquee-container .skills-list li {
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 
