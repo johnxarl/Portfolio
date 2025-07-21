@@ -109,6 +109,14 @@
     <p><strong>Tech Stack:</strong> Java, Swing, SQLite, JDBC</p>
     <a href="https://johnxarl.github.io/CemetaryManagement/" target="_blank">View on GitHub</a>
   </div>
+
+  <div class="project">
+    <img src="images/dental1.png" alt="Mr. Tooth Dental Clinic Landing Page screenshot" class="project-thumb" onclick="openGallery('dentalclinic')" style="cursor:pointer;max-width:180px;border-radius:10px;margin-bottom:12px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+    <h3>Mr. Tooth Dental Clinic Landing Page</h3>
+    <p>A modern, welcoming landing page for Mr. Tooth Dental Clinic. Features a clean design, service highlights, testimonials, FAQs, and a story section. Built to help patients easily find information, book appointments, and feel confident about their dental care.</p>
+    <p><strong>Tech Stack:</strong> HTML, CSS, JavaScript</p>
+    <a href="https://johnxarl.github.io/DentalClinicLandingPage/" target="_blank">View Live Demo</a>
+  </div>
 </section>
 
 <!-- Project Galleries -->
@@ -138,6 +146,12 @@
       <p class="blog-date">March 2024</p>
       <p class="blog-summary">My experience building a visual, grid-based Java app for managing cemetery records and grave plots, with a focus on usability and data integrity.</p>
       <button class="btn-resume" onclick="openBlogModal('cemetery')" aria-label="Read full post: Designing the Cemetery Management System">Read More</button>
+    </div>
+    <div class="blog-post">
+      <h3>Designing the Mr. Tooth Dental Clinic Landing Page</h3>
+      <p class="blog-date">June 2024</p>
+      <p class="blog-summary">How I created a modern, welcoming landing page for a dental clinic, focusing on user experience, trust, and clear information.</p>
+      <button class="btn-resume" onclick="openBlogModal('dentalclinic')" aria-label="Read full post: Designing the Mr. Tooth Dental Clinic Landing Page">Read More</button>
     </div>
   </section>
 
@@ -197,6 +211,25 @@
       <p><strong>Development Process:</strong> I designed the grid-based UI with Java Swing and implemented robust data management with SQLite and JDBC. The focus was on usability and ensuring data integrity for sensitive records.</p>
       <p><strong>What I Learned:</strong> This project deepened my understanding of UI design for specialized applications and the importance of reliable data handling in real-world scenarios.</p>
       <p><a href="https://johnxarl.github.io/CemetaryManagement/" target="_blank">View on GitHub</a></p>
+    </div>
+  </div>
+  <div id="blogModal-dentalclinic" class="blogModal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.7); z-index:1000; align-items:center; justify-content:center;">
+    <div style="background:#fff; color:#222; max-width:600px; width:90vw; margin:auto; border-radius:16px; padding:32px 24px; position:relative; box-shadow:0 8px 32px rgba(0,0,0,0.18);">
+      <button onclick="closeBlogModal('dentalclinic')" aria-label="Close blog post" style="position:absolute; top:16px; right:16px; background:none; border:none; font-size:1.5em; cursor:pointer;">&times;</button>
+      <h2>Designing the Mr. Tooth Dental Clinic Landing Page</h2>
+      <p class="blog-date">June 2024</p>
+      <p><strong>Overview:</strong> The Mr. Tooth Dental Clinic Landing Page is a modern, user-friendly website designed to help patients easily find information, book appointments, and feel confident about their dental care. The project was inspired by the need for a welcoming, trustworthy online presence for a local dental clinic.</p>
+      <p><strong>Tech Stack:</strong> HTML, CSS, JavaScript</p>
+      <p><strong>Key Features:</strong></p>
+      <ul>
+        <li>Clean, inviting design with a focus on accessibility and trust</li>
+        <li>Service highlights, testimonials, FAQs, and a story section</li>
+        <li>Easy-to-use appointment booking and contact options</li>
+        <li>Responsive layout for all devices</li>
+      </ul>
+      <p><strong>Development Process:</strong> I started by researching dental clinic websites to understand what builds trust and comfort for patients. I designed the layout to be clear and welcoming, then built the site with HTML, CSS, and JavaScript, focusing on accessibility and mobile responsiveness.</p>
+      <p><strong>What I Learned:</strong> This project taught me about designing for trust, the importance of clear information, and how to create a positive first impression online.</p>
+      <p><a href="https://johnxarl.github.io/DentalClinicLandingPage/" target="_blank">View the live site</a></p>
     </div>
   </div>
 
@@ -323,6 +356,13 @@ const projectImages = {
     'images/cemetarymanagement3.png',
     'images/cemetarymanagement4.png',
     'images/cemetarymanagement5.png',
+  ],
+  dentalclinic: [
+    'images/dental1.png',
+    'images/dental2.png',
+    'images/dental3.png',
+    'images/dental4.png',
+    'images/dental5.png',
   ]
 };
 function openGallery(project) {
