@@ -1,1 +1,2 @@
+Welcome to my portfolio! I’m John Carl Q. Velasquez, a passionate Java programmer, web developer, and designer. This site showcases my journey, skills, and projects—from modern web apps to robust desktop solutions. I believe in building technology that’s not only functional, but also beautiful and user-friendly. Explore my work, read my story, and see how I turn ideas into reality with code and creativity.
 # Portfolio
