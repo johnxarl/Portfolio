@@ -3,18 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Johncarl | Java Developer</title>
+  <meta name="description" content="John Carl Q. Velasquez - Personal Portfolio. Offering services in Web Development, WordPress, SEO, Database Management, and Workflow Automation." />
+  <title>John Carl | Web Developer & IT Specialist</title>
   <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Welcome Overlay -->
-  <div id="welcomeOverlay" style="position:fixed;z-index:5000;top:0;left:0;width:100vw;height:100vh;background:#EAE7DC;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity 0.7s;">
-    <img src="images/profile.jpg" alt="Profile photo of John Carl Velasquez" style="width:120px;height:120px;border-radius:50%;object-fit:cover;box-shadow:0 4px 16px rgba(142,141,138,0.18);margin-bottom:24px;">
-    <h1 style="font-size:2.5rem;color:#E85A4F;margin-bottom:10px;">Welcome!</h1>
-    <h2 style="font-size:1.5rem;color:#8E8D8A;margin-bottom:8px;">I'm John Carl Q. Velasquez</h2>
-    <p style="font-size:1.1rem;color:#222;margin-bottom:28px;">Java Programmer | Web Developer & Designer | IT Student</p>
-    <button id="enterBtn" style="padding:12px 32px;font-size:1.1rem;background:#E98074;color:#fff;border:none;border-radius:8px;cursor:pointer;box-shadow:0 2px 8px rgba(142,141,138,0.10);transition:background 0.2s;">Enter Portfolio</button>
-  </div>
+
   <header role="banner">
   <div class="header-content">
     <img src="images/profile.jpg" alt="Profile photo of John Carl Velasquez, smiling and wearing a collared shirt" class="header-photo" />
@@ -23,28 +21,29 @@
       <p>Java Programmer | Web Developer & Designer | IT Student | Desktop App Developer</p>
       <nav role="navigation" aria-label="Main navigation">
         <a href="#about">About</a>
+        <a href="#services">Services</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
       </nav>
-      <a href="resume.pdf" download class="btn-resume" aria-label="Download Resume as PDF">Download Resume</a>
-      <button id="darkModeToggle" aria-label="Toggle dark mode" style="margin-top:18px; margin-left:10px; background:none; border:none; cursor:pointer; font-size:1.5em; color:#fff;">
-        <span id="darkModeIcon" aria-hidden="true">🌙</span>
-      </button>
+      <div class="header-actions" style="margin-top: 24px; display: flex; gap: 15px; align-items: center; justify-content: flex-start; flex-wrap: wrap;">
+        <a href="JohnCarl-CV.pdf" download class="btn-resume" aria-label="Download Resume as PDF">Download Resume</a>
+        <a href="#contact" class="btn-hire" aria-label="Hire Me">Hire Me</a>
+        <button id="darkModeToggle" aria-label="Toggle dark mode" style="background:none; border:none; cursor:pointer; font-size:1.5em; color:#fff; display:flex; align-items:center;">
+          <span id="darkModeIcon" aria-hidden="true">🌙</span>
+        </button>
+      </div>
     </div>
   </div>
 </header>
 
 <main id="main-content" tabindex="-1">
   <section id="about" aria-labelledby="about-heading">
-  <h2 id="about-heading">About Me</h2>
-  <p>Hello! I'm Johncarl, an IT student at National University - Clark majoring in Web and Mobile Application. I am a passionate Web Developer and Designer, as well as a Java desktop app developer. I love building beautiful, functional websites and desktop applications that solve real-world problems.</p>
-  <p>With a strong foundation in both design and development, I create user-friendly web experiences using HTML, CSS, and modern design principles. I am a quick learner, adaptable, and passionate about continuous learning. My background includes HR experience and IT certifications like CompTIA ITF+, giving me a strong foundation in both communication and tech troubleshooting.</p>
-  <ul>
-    <li><strong>Location:</strong> Concepcion, Tarlac</li>
-    <li><strong>Email:</strong> johncarlvelasquez482@gmail.com</li>
-    <li><strong>Phone:</strong> 09660084563</li>
-    <li><strong>Certifications:</strong> CompTIA ITF+</li>
-  </ul>
+    <h2 id="about-heading">About Me</h2>
+    <p>Hi, I'm John Carl Velasquez.</p>
+    <p>An IT Specialist experienced in data reporting, database management, and workflow automation. I have worked with a US-based client delivering structured data and reports that support business decisions.</p>
+    <p>I enjoy using technology, AI tools, and automation to simplify complex processes and improve efficiency.</p>
+    
+  
 </section>
 <div class="skills-marquee-container">
   <ul class="skills-list" id="skillsList" aria-label="Skills list">
@@ -72,6 +71,42 @@
     <li data-description="Networking fundamentals cover the basics of how computers communicate and share data.">Networking Fundamentals</li>
   </ul>
 </div>
+
+<section id="services" aria-labelledby="services-heading">
+  <h2 id="services-heading">My Services</h2>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">🌐</div>
+      <h3>WordPress Developer</h3>
+      <p>Custom WordPress themes, plugins, and full website setups tailored to your brand.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📈</div>
+      <h3>SEO Optimization</h3>
+      <p>On-page & Off-page SEO to improve your website's visibility and rank higher on Google.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🗄️</div>
+      <h3>Database Management</h3>
+      <p>MySQL, SQLite & Firebase database design, structuring, and optimization.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📱</div>
+      <h3>Social Media Management</h3>
+      <p>Content creation, posting schedules, and engagement strategies across multiple platforms.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">☁️</div>
+      <h3>Hostinger Management</h3>
+      <p>Domain setup, cPanel management, email configuration, and website hosting.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">⚙️</div>
+      <h3>Workflow Automation</h3>
+      <p>Automate repetitive tasks to save time and increase productivity in your business.</p>
+    </div>
+  </div>
+</section>
 
 <!-- Skill Description Modal -->
 <div id="skillModal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.7); z-index:2000; align-items:center; justify-content:center;">
@@ -234,15 +269,23 @@
   </div>
 
 
-  <section id="contact" aria-labelledby="contact-heading">
-    <h2 id="contact-heading">Contact Me</h2>
-    <p><strong>Email:</strong> johncarlvelasquez482@gmail.com</p>
-    <p><strong>Phone:</strong> 09660084563</p>
-    <p><strong>Facebook:</strong> 
-      <a href="https://www.facebook.com/share/19WjxSf8uq/?mibextid=wwXIfr" target="_blank" aria-label="Facebook profile for John Carl Velasquez">
-        facebook.com/johncarl
+  <section id="contact" aria-labelledby="contact-heading" style="text-align: center;">
+    <h2 id="contact-heading">Let's Work Together</h2>
+    <p style="margin-bottom: 30px; font-size: 1.15rem; color: #555;">Ready to start your next project or need help growing your business? I'd love to help!</p>
+    <div class="contact-methods">
+      <a href="mailto:johncarlvelasquez482@gmail.com" class="contact-box">
+        <span class="icon">📧</span>
+        <span>johncarlvelasquez482@gmail.com</span>
       </a>
-    </p>
+      <a href="tel:09660084563" class="contact-box">
+        <span class="icon">📞</span>
+        <span>09660084563</span>
+      </a>
+      <a href="https://www.facebook.com/share/19WjxSf8uq/?mibextid=wwXIfr" target="_blank" class="contact-box">
+        <span class="icon">📘</span>
+        <span>facebook.com/johncarl</span>
+      </a>
+    </div>
   </section>
 
   <footer>
@@ -385,19 +428,6 @@ function closeGallery() {
   document.getElementById('galleryModal').style.display = 'none';
   document.body.style.overflow = '';
 }
-
-// Welcome Overlay Logic
-const welcomeOverlay = document.getElementById('welcomeOverlay');
-const enterBtn = document.getElementById('enterBtn');
-welcomeOverlay.style.display = 'flex';
-document.body.style.overflow = 'hidden';
-enterBtn.addEventListener('click', () => {
-  welcomeOverlay.style.opacity = 0;
-  setTimeout(() => {
-    welcomeOverlay.style.display = 'none';
-    document.body.style.overflow = '';
-  }, 700);
-});
 
 </script>
 </html>
