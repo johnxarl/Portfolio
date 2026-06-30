@@ -91,6 +91,7 @@
   const projectImages = {
     tvr: [
       { src: 'images/GSC.tvr.png', alt: 'Google Search Console — organic growth' },
+      { src: 'images/Comparison.TVR.png', alt: 'Google Search Console — before vs after comparison' },
       { src: 'images/GBP.TVR.png', alt: 'Google Business Profile optimization' },
       { src: 'images/speed.desktop.TVR.png', alt: 'Desktop PageSpeed score 98/100' },
       { src: 'images/speed.mobile.TVR.png', alt: 'Mobile PageSpeed score' },
@@ -99,6 +100,7 @@
     ],
     tbr: [
       { src: 'images/GSC.tbr.png', alt: 'Google Search Console — organic growth' },
+      { src: 'images/Comparison.TBR.png', alt: 'Google Search Console — before vs after comparison' },
       { src: 'images/GBP.TBR.png', alt: 'Google Business Profile optimization' },
       { src: 'images/speed.desktop.tbr.png', alt: 'Desktop PageSpeed score' },
       { src: 'images/speed.mobile.tbr.png', alt: 'Mobile PageSpeed score' }
